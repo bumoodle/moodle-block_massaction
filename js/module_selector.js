@@ -89,8 +89,9 @@ module_selector.prototype.add_module_checkbox = function(section_number, module_
         YAHOO.util.Dom.addClass(box, 'module_selector_checkbox');
 
         // attach it to the command box
-        var command_box = YAHOO.util.Dom.getElementsByClassName('commands', 'span', module_el);
-        command_box[0].appendChild(box);
+        var command_box = YAHOO.util.Dom.getElementsByClassName('mod-indent', 'div', module_el);
+        var mod_icon = YAHOO.util.Dom.getFirstChild(command_box[0]);
+        YAHOO.util.Dom.insertBefore(box, mod_icon);
     }
 
     // keep track in registry
